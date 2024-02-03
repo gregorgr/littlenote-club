@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, ViewChild  } from '@angular/core';
+// import { Observable } from 'rxjs';
 import { Composition } from '../../../model/composition';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteConfirmationDialogComponent } from './delete-confirmation-dialog.component';
 import { CompositionServiceService } from '../../../services/composition-service.service';
 import { ServerNameService } from '../../../services/server-name.service';
+import { MatPaginator } from '@angular/material/paginator';
+
 
 @Component({
   selector: 'app-music-list',
@@ -12,15 +14,22 @@ import { ServerNameService } from '../../../services/server-name.service';
   styleUrl: './music-list.component.css',
   providers: [CompositionServiceService]
 })
+
 export class MusicListComponent implements OnInit {
 
-  pdfLogoPath = 'assets/i/pdf-logo.png'
+  compositions: Composition[] = [];
 
+  pdfLogoPath = 'assets/i/pdf-logo.png'
+  // Reference to MatPaginator
+  // @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator | undefined;
+  // Items per page
+  pageSize = 10;
   webserver:string = "";
 
 
 
-  compositions: Composition[] = [];
+
   
   constructor(public dialog: MatDialog,
     private compositionService: CompositionServiceService,
@@ -35,7 +44,14 @@ export class MusicListComponent implements OnInit {
   }
 
   ngOnInit(){
+        // Set up the paginator if it's defined
+        if (this.paginator) {
+          this.paginator.pageSize = this.pageSize;
+        }
+  }
 
+  ngAfterViewInit(): void {
+    // Initialization logic here
   }
 
   serverNameUpdated(event : Event){

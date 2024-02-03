@@ -1,6 +1,8 @@
 
-<div class="row myrow" *ngFor="let composition of compositions">
-    
+<div class="row myrow" *ngFor="let composition of compositions.slice((paginator?.pageIndex || 0) * pageSize, ((paginator?.pageIndex || 0) + 1) * pageSize)">
+    <!-- Your app-music-note component here -->
     <app-music-note [composition]="composition" [webserver]="this.webserver" (selectedForDelete)="removeComposition($event)"></app-music-note>
-</div>
+  </div>
+
+<mat-paginator [length]="compositions.length" [pageSize]="pageSize"></mat-paginator>
 

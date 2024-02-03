@@ -27,7 +27,7 @@ import { LogoutComponent } from './components/user/logout/logout.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CreateCompositionComponent } from './components/music/create-composition/create-composition.component';
 import { DbStatisticsComponent } from './components/music/db-statistics/db-statistics.component';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -53,7 +53,8 @@ import { DbStatisticsComponent } from './components/music/db-statistics/db-stati
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule
   ],
   providers: [
     provideAnimationsAsync(),

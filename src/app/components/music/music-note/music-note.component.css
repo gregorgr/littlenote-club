@@ -24,7 +24,13 @@
     /* box-shadow: rgb(199, 199, 199) 5px 4px 20px 2px;*/
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     margin: 0 0  20px ;
+    transition: background-color 0.3s ease;
 }
+
+.card:hover {
+    box-shadow: rgba(255, 136, 0, 0.591) 0px 6px 13px;
+}
+
 .badge{
     float: left;
     width: 40%;
@@ -65,9 +71,17 @@
    color: #232323;
    background-color: #fff;
    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
 }
+
+
+
 .btn-outline-primary.custom-button{
     border-color: rgb(60, 185, 65);
+
+}
+.btn-outline-primary.custom-button:hover{
+    box-shadow: rgba(187, 187, 187, 0.591) 0px 6px 13px;
 
 }
 .btn-outline-warning.custom-button{

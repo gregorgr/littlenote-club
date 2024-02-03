@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 // import { Observable } from 'rxjs';
 import { Composition } from '../../../model/composition';
 import { CompositionServiceService } from '../../../services/composition-service.service';
-
 
 
 @Component({
@@ -13,8 +12,10 @@ import { CompositionServiceService } from '../../../services/composition-service
 export class MusicTypesComponent {
 
 
-
   @Input() compositions: Composition[] = [];
+
+
+
 
   typeCountResults: { type: string; count: number }[] = [];
 
@@ -33,6 +34,8 @@ export class MusicTypesComponent {
   }
 
   ngOnInit(): void {
+
+  
     // Assuming you have a service to fetch compositions
     this.compositionService.getCompostitions().subscribe(
       (data: Composition[]) => {
