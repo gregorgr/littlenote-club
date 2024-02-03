@@ -1,0 +1,38 @@
+<p>edit-composition works!</p>
+<form>
+    <div class="col-xs-12">
+        <button *ngIf="!isEditMode" (click)="editComposition()">Edit</button>
+        
+        <div *ngIf="isEditMode">
+        <label>Type:</label>
+        <input [(ngModel)]="composition.type" />
+
+        <label>Title:</label>
+        <input [(ngModel)]="composition.title" />
+
+        <label>Composer:</label>
+        <input [(ngModel)]="composition.composer" />
+
+        <label>Liricist:</label>
+        <input [(ngModel)]="composition.liricist" />
+
+        <label>URI:</label>
+        <input [(ngModel)]="composition.uri" />
+
+        <button (click)="saveComposition()">Save</button>
+        <button (click)="cancelEdit()">Cancel</button>
+        </div>
+
+        <p *ngIf="!isEditMode" class="text-muted">[{{ composition.type }}]</p>
+        <h3 *ngIf="!isEditMode">{{ composition.title }}</h3>
+        <p *ngIf="!isEditMode" class="text-muted">{{ composition.composer }}</p>
+        <div *ngIf="!isEditMode">
+        <p *ngIf="composition.liricist" class="text-muted">Avtor besedila: {{ composition.liricist }}</p>
+        </div>
+        <div *ngIf="!isEditMode" class="score-link">
+        <!--<a *ngIf="composition.uri" target="_blank" [href]="composition.uri">
+            <img *ngIf="composition.uri" [src]="pdfLogoPath" class="img-responsive" alt="PDF Logo">
+        </a>-->
+        </div>
+    </div>
+</form>

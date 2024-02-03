@@ -1,0 +1,6 @@
+
+<div class="row myrow" *ngFor="let composition of compositions">
+    
+    <app-music-note [composition]="composition" [webserver]="this.webserver" (selectedForDelete)="removeComposition($event)"></app-music-note>
+</div>
+

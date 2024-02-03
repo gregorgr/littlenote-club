@@ -1,0 +1,10 @@
+<div class="sidebar-element">
+    <div class="col-xs-12 left-list">
+        <!-- Assuming compositions is an input property -->
+        <h3>Seznam skladateljev:</h3>
+        <hr>
+        <div *ngFor="let result of typeCountResults">
+        <p class="taksonomy-item" > <span >{{result.type }}</span>({{ result.count }})</p>
+        </div>
+    </div>
+</div>

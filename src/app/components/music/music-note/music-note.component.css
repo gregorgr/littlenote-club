@@ -1,0 +1,81 @@
+.myrow{
+    width: 100%;
+    /*background-color: #ffb300;*/
+    margin:  20px 0;
+}
+.score-link{
+    float: right;
+    padding-right: 30px;
+}
+.score-link img{
+    width: 40px;
+    
+}
+.card-top-row{
+    width: 100%;
+    /*background-color: #ffb300;*/
+    height: 20px;
+}
+.card {
+    border: none;
+    border-radius: 10px;
+    padding:  10px 20px;  
+    background-color: rgb(252, 252, 252);
+    /* box-shadow: rgb(199, 199, 199) 5px 4px 20px 2px;*/
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 0 0  20px ;
+}
+.badge{
+    float: left;
+    width: 40%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.badge span {
+    background-color: #ffb300;
+    font-size: 1.2em;
+    width: 120px;
+    /*
+    height: 25px;*/
+    padding: 5px 15px;
+
+    border-radius: 5px;
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center
+}
+.composition-title{
+    font-size: 2.1em;
+    color: rgb(88, 88, 88);
+}
+.inner-text{
+    color: rgb(58, 58, 58);
+}
+
+.left-buttons{
+    margin-top: 50px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.custom-button{
+   margin-right: 30px;
+   padding: 6px 20px;
+   border-radius: 5px;
+   color: #232323;
+   background-color: #fff;
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.btn-outline-primary.custom-button{
+    border-color: rgb(60, 185, 65);
+
+}
+.btn-outline-warning.custom-button{
+    border-color: rgb(227, 121, 0);
+
+}
+
+img.preview_image{
+    width: 120px;
+    padding-bottom: 20px;
+}

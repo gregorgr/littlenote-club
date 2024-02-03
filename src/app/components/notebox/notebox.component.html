@@ -1,0 +1,11 @@
+<br>
+<h3>Vsebina za vajo</h3>
+<img [src]="imgUrl" (click)="isSelected.emit(imgUrl)" >
+<br>
+<p>Enter server name:</p>
+<!-- <input type="text" (input)="serverNameUpdated($event)" > -->
+<input type="text" [(ngModel)]="serverName" > 
+<br>
+<br>
+<a target="_blank" href="{{serverName}}">{{serverName}}</a>
+<ng-content></ng-content>

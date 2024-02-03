@@ -1,0 +1,44 @@
+
+<div class="myrow">
+    <div class="col-xs-12">
+        <div class="card p-3 mb-2">
+            <div class="d-flex justify-content-between">
+                <div class="card-top-row">
+                    <div *ngIf="composition.type" class="badge"> <span>{{ composition.type }}</span> </div>
+                    <div class="score-link">
+                        <a *ngIf="composition.uri" target="_blank" [title]="composition.title" [href]="this.webserver + composition.uri">
+                            <img *ngIf="composition.uri" [src]="pdfLogoPath" class="img-responsive" alt="PDF Logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="mt-5">
+                        <h3 class="heading composition-title">{{ composition.title }}</h3>
+                    </div>
+                <div class="mt-5">
+                        <p class="text-muted">Skladatelj: <span class="inner-text">{{ composition.composer }}</span></p>
+                    </div>
+                    <div *ngIf="composition.liricist">
+                        <p class="text-muted">Avtor besedila: <span class="inner-text">{{ composition.liricist }}</span></p>
+                    </div>
+                    <div class="card-top-row left-buttons ">
+                        <button  type="button" class="btn btn-outline-primary custom-button">Uredi</button> 
+                        
+                        <button  type="button" class="btn btn-outline-warning custom-button" (click)="selectedForDelete.emit(composition.composition_id)">Izbriši</button>
+                    </div>
+                </div>
+                
+                <div *ngIf="composition.preview" class="col-md-4">
+                    <a *ngIf="composition.uri" target="_blank" [title]="composition.title" [href]="this.webserver + composition.uri">
+                    <img alt="preview image" class="preview_image" [src]="this.webserver + composition.preview" >
+                    </a>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</div>
